@@ -8,5 +8,6 @@
         public string Descripcion { get; set; }
         public string Modelo { get; set; }
         public string urlImagen { get; set; }
+        public List<SubProducto> Productos { get; set; }
     }
 }
