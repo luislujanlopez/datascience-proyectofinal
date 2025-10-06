@@ -84,5 +84,13 @@ namespace ProyectoFinalWebApi.Controllers
             if (producto == null) return NotFound();
             return producto;
         }
+
+        [HttpGet("{modelo}")]
+        public async Task<ActionResult<List<Producto>>> GetsByModelo(string modelo)
+        {
+            var producto = await _context.Productos.Where(x => x.Modelo.Equals(modelo)).ToListAsync();
+            if (producto == null) return NotFound();
+            return producto;
+        }
     }
 }
