@@ -92,5 +92,13 @@ namespace ProyectoFinalWebApi.Controllers
             if (producto == null) return NotFound();
             return producto;
         }
+
+        [HttpGet("{modelo}")]
+        public async Task<ActionResult<List<Producto>>> GetsByPrecioMayor (string modelo)
+        {
+            var producto = await _context.Productos.OrderByDescending(z => z.Precio).ToListAsync();
+            if (producto == null) return NotFound();
+            return producto;
+        }
     }
 }
