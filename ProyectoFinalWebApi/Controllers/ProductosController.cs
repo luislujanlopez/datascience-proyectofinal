@@ -24,6 +24,7 @@ namespace ProyectoFinalWebApi.Controllers
             return await _context.Productos.ToListAsync();
         }
 
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Producto>> Get(int id)
         {

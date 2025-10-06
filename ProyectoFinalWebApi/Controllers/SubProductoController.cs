@@ -76,5 +76,11 @@ namespace ProyectoFinalWebApi.Controllers
         {
             return _context.SubProductos.Any(e => e.Id == id);
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<SubProducto>>> GetSubproductosPorProducto(int idProducto)
+        {
+            return await _context.SubProductos.Where(e => e.IdProducto == idProducto).ToListAsync();
+        }
     }
 }
