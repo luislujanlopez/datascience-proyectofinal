@@ -12,5 +12,6 @@ namespace ProyectoFinalWebApi.Data
         }
 
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<SubProducto> SubProductos { get; set; }
     }
 }
