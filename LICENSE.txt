@@ -1,0 +1,7 @@
+MIT License
+
+Copyright (c) 2025 Curso Git
+
+Se concede permiso por la presente, sin cargo alguno, a cualquier persona que obtenga una copia.
+Es un ejemplo para curso final de git.
+
