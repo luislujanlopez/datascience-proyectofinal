@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalWebApi.Models
 {
-    public class SubProducto
+    public class Pedido
     {
         public int Id { get; set; }
         public int Cantidad { get; set; }
