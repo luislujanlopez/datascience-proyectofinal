@@ -1,6 +1,11 @@
 # Web Api para Proyecto Final de Git - BFF
 Api para proyecto final de curso de git, listar productos y login
 
+## Environment Variables
+| Variable                | Descripcion                                                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **EMAIL_SENDER***          	| Email de envio de correos
+
 ## Configuración
 Configurar el appsettings
 

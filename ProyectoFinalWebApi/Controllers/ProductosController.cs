@@ -24,6 +24,7 @@ namespace ProyectoFinalWebApi.Controllers
             return await _context.Productos.ToListAsync();
         }
 
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Producto>> Get(int id)
         {
@@ -74,6 +75,30 @@ namespace ProyectoFinalWebApi.Controllers
         private bool ProductoExists(int id)
         {
             return _context.Productos.Any(e => e.Id == id);
+        }
+
+        [HttpGet("{nombre}")]
+        public async Task<ActionResult<Producto>> GetByNombre(string nombre)
+        {
+            var producto = await _context.Productos.Where(x => x.Nombre.Equals(nombre)).FirstOrDefaultAsync();
+            if (producto == null) return NotFound();
+            return producto;
+        }
+
+        [HttpGet("{modelo}")]
+        public async Task<ActionResult<List<Producto>>> GetsByModelo(string modelo)
+        {
+            var producto = await _context.Productos.Where(x => x.Modelo.Equals(modelo)).ToListAsync();
+            if (producto == null) return NotFound();
+            return producto;
+        }
+
+        [HttpGet("{modelo}")]
+        public async Task<ActionResult<List<Producto>>> GetsByPrecioMayor (string modelo)
+        {
+            var producto = await _context.Productos.OrderByDescending(z => z.Precio).ToListAsync();
+            if (producto == null) return NotFound();
+            return producto;
         }
     }
 }
