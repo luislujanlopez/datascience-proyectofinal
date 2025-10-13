@@ -76,6 +76,16 @@ namespace ProyectoFinalWebApi.Controllers
         {
             return _context.Pedidos.Any(e => e.Id == id);
         }
-       
+
+
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<PedidoDetalle>>> GetDetalle(int id)
+        {
+            Pedido Pedido = await _context.Pedidos.FindAsync(id);
+            if (Pedido == null) return NotFound();
+
+            return Pedido.Detalle;
+        }
     }
 }
